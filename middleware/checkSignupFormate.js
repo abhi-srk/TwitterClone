@@ -4,20 +4,20 @@ const checkSignupFormat =  (req,res,next)=>{
 
     console.log(req);
 
-    // const {name, email, password, cpassword} = req.body;
+    const {name, email, password, cpassword} = req.body;
 
-    // if(password != cpassword){
-    //     return res.send("worng password");
-    // }
-    // if(password.length < 6){
-    //     return res.send("password must have atleast 6 chars")
-    // }
-    // if(name.length < 6){
-    //     return res.send("please enter the vaild name");
-    // }
-    // if(!email.indcludes("@")){
-    //     return res.send("email does not contain @")
-    // }
+    if(password != cpassword){
+        return res.send("worng password");
+    }
+    if(password.length < 6){
+        return res.send("password must have atleast 6 chars")
+    }
+    if(name.length < 6){
+        return res.send("please enter the vaild name");
+    }
+    if(!email.indcludes("@")){
+        return res.send("email does not contain @")
+    }
 
     next();
 }

@@ -24,7 +24,7 @@ const  login=async (req,res)=>{
     }
     return res.send("either email or password is not matching")
 }
- const  signup=async (req,res)=>{
+const  signup=async (req,res)=>{
     const {email,password,name}=req.body;
     let salt=await bcrypt.genSalt();
     let haspassword=await bcrypt.hash(password,salt)

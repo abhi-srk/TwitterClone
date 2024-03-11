@@ -10,6 +10,7 @@ const validateToken= async (req,res,next)=>{
         if(token==""){
             return res.status(401).send({error:"Invalid token 1"});
         }
+        console.log(token);
         const dectoken = await jwt.decode(tokwn,jwt_secrets);
         req.userid=dectoken.id;
         next();
